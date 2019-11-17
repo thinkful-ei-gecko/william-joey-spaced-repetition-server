@@ -25,7 +25,7 @@ VALUES
   (2, 1, 'hallo', 'hello', 3),
   (3, 1, 'haus', 'house', 4),
   (4, 1, 'entwicklerin', 'developer', 5),
-  (5, 1, 'übersetzen', 'translate', 6),
+  (5, 1, 'ubersetzen', 'translate', 6),
   (6, 1, 'tolle', 'amazing', 7),
   (7, 1, 'hund', 'dog', 8),
   (8, 1, 'katze', 'cat', null);
