@@ -65,8 +65,10 @@ const UserService = {
         ['ubersetzen', 'translate', 6],
         ['tolle', 'amazing', 7],
         ['hund', 'dog', 8],
-        ['katze', 'cat', null],
-      ]
+        ['katze', 'cat', 9],
+        ['fett', 'fat', 10],
+        ['klein', 'small', null]
+      ];
 
       const [languageHeadId] = await trx
         .into('word')

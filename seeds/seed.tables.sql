@@ -28,7 +28,9 @@ VALUES
   (5, 1, 'ubersetzen', 'translate', 6),
   (6, 1, 'tolle', 'amazing', 7),
   (7, 1, 'hund', 'dog', 8),
-  (8, 1, 'katze', 'cat', null);
+  (8, 1, 'katze', 'cat', 9),
+  (9, 1, 'fett', 'fat', 10),
+  (10, 1, 'klein', 'small', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
 

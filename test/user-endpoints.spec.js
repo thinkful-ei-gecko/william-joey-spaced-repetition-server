@@ -183,6 +183,8 @@ describe('User Endpoints', function () {
             { original: 'tolle', translation: 'amazing' },
             { original: 'hund', translation: 'dog' },
             { original: 'katze', translation: 'cat' },
+            { original: 'fett', translation: 'fat' },
+            { original: 'klein', translation: 'small' },
           ]
         }
         return supertest(app)
