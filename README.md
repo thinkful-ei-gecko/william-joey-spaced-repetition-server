@@ -51,4 +51,5 @@ Run the migrations up `npm run migrate`
 
 Run the migrations down `npm run migrate -- 0`
 
-https://gist.github.com/wbae912/4be13b55e29ed8e5ac56a2e2c9734271
+Understanding Back-End code: https://gist.github.com/wbae912/4be13b55e29ed8e5ac56a2e2c9734271
+Understanding Client-End code: https://gist.github.com/wbae912/e31f71f84134cc1a80fdacab34edaadd
