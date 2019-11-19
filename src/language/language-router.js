@@ -107,6 +107,10 @@ module.exports = languageRouter;
 
 
 //Is the head going to constantly change? Do we need to look at the other "nodes" in our Linked List
+//
 //Is the correct approach to use the remove() and insertAt() methods in the Linked List and insertAt("M")?
+//
 //Are we only looking at the head, checking to see if the user's input === head.translation?
+//
 //What does it mean by move back the question "M" places in the list?? What happens if "M" is 1000, for example...
+//
