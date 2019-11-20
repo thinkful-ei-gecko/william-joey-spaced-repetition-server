@@ -68,22 +68,17 @@ languageRouter
 languageRouter
   .post('/guess', async (req, res, next) => {
     try{
-      const db = req.app.get('db');
-      const language_id = req.language.id;
-
-      const words = await LanguageService.getLanguageWords(db, language_id);
-      const list = await LanguageService.populateLinkedList(words);
-
       const { guess } = req.body;
-  
+
       if(!guess) {
         return res.status(400).json( {error: `Missing 'guess' in request body`} );
       }
 
-      const language = req.language;
+      const db = req.app.get('db');
+      const words = await LanguageService.getLanguageWords(db, req.language.id);
+      const list = await LanguageService.populateLinkedList(words);
 
-
-      LanguageService.memoryAlgorithm(list, guess, language, res);
+      LanguageService.memoryAlgorithm(list, guess, req.language, res, db);
 
       next();
     } catch(error) {
@@ -94,19 +89,3 @@ languageRouter
   });
 
 module.exports = languageRouter;
-
-
-// Question:       1   2   3   4   5
-
-// Memory_value:   1   1   1   1   1
-
-
-// Question:       2   3   1   4   5
-
-// Memory_value:   1   1   2   1   1
-
-
-//Is the head going to constantly change? Do we need to look at the other "nodes" in our Linked List
-//Is the correct approach to use the remove() and insertAt() methods in the Linked List and insertAt("M")?
-//Are we only looking at the head, checking to see if the user's input === head.translation?
-//What does it mean by move back the question "M" places in the list?? What happens if "M" is 1000, for example...

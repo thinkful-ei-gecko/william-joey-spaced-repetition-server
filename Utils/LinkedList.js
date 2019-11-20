@@ -113,7 +113,7 @@ class LinkedList {
 
 function display(list) {
   const arr = [];
-  let currNode = this.head;
+  let currNode = list.head;
 
   while (currNode !== null) {
     arr.push(currNode.value);
@@ -123,7 +123,23 @@ function display(list) {
   return arr;
 }
 
+function size(list){
+  let counter = 0;
+  let currNode = list.head;
+  if(!currNode){
+    return counter;
+  }
+  else
+    counter++;
+  while (!(currNode.next == null)) {
+    counter++;
+    currNode = currNode.next;
+  }
+  return counter;
+}
+
 module.exports = { 
   LinkedList, 
-  display 
+  display,
+  size
 };
