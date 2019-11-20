@@ -155,6 +155,8 @@ const LanguageService = {
     }
   },
 
+
+  // IGNORE!!!!!
   // memoryAlgorithm(list, userAnswer, language, res, db) {
   //   const head = list.head.value;
   //   let M = head.memory_value;
@@ -206,7 +208,7 @@ const LanguageService = {
 
 module.exports = LanguageService;
 
-
+// IGNORE!!!!
 // memoryAlgorithm(list, userAnswer, language, res, db) {
 //   const head = list.head.value;
 
