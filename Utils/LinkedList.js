@@ -9,9 +9,11 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
+
   insertFirst(item) {
     this.head = new _Node(item, null);
   }
+
   insertLast(item) {
     if (this.head === null) this.insertFirst(item);
     else {
@@ -20,6 +22,7 @@ class LinkedList {
       tempNode.next = new _Node(item, null);
     }
   }
+
   remove(item) {
     if (!this.head) return null;
     if (this.head.value === item) {
@@ -38,6 +41,7 @@ class LinkedList {
     }
     previousNode.next = currNode.next;
   }
+
   find(item) {
     let currNode = this.head;
     if (!this.head) {
@@ -52,6 +56,7 @@ class LinkedList {
     }
     return currNode;
   }
+
   insertBefore(item, key) {
     if (this.head === null) {
       console.log('Key does not exist');
@@ -69,6 +74,7 @@ class LinkedList {
     }
     prevNode.next = new _Node(item, currNode);
   }
+
   insertAfter(item, key) {
     if (this.head === null) {
       console.log('Key does not exist');
@@ -85,29 +91,31 @@ class LinkedList {
     let tempNode = currNode.next;
     currNode.next = new _Node(item, tempNode);
   }
-  insertAt(item, position) {
-    if (this.head === null) {
-      if (position === 1) {
-        this.insertFirst(item);
-        return;
-      } else {
-        this.insertLast(item);
-        return;
-      }
+  
+  insertAt(list, item, position) {
+    if (position < 0) {
+      throw new Error('Position error');
     }
-    let currentPosition = 1;
-    let currNode = this.head;
-    let prevNode = this.head;
-    while (currentPosition !== position && currNode !== null) {
-      prevNode = currNode;
-      currNode = currNode.next;
-      currentPosition++;
+    if (position === 0) {
+      this.insertFirst(item);
     }
-    if (currNode === null) {
+    if (position > size(list)) {
       this.insertLast(item);
+    } else {
+      // Find the node which we want to insert after
+      const node = this._findNthElement(position - 1);
+      const newNode = new _Node(item, null);
+      newNode.next = node.next; 
+      node.next = newNode;
     }
-    let tempNode = currNode;
-    prevNode.next = new _Node(item, tempNode);
+  }
+  
+  _findNthElement(position) {
+    let node = this.head;
+    for (let i=0; i<position; i++) {
+      node = node.next;
+    }
+    return node;
   }
 }
 
