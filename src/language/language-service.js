@@ -138,20 +138,20 @@ const LanguageService = {
       this.updateLanguage(db, language.id, {head: currNode.id});
 
       //Updating Word table to reflect removed HEAD being inserted at the SECOND POSITION in the LL...Next is now pointing to the current HEAD's next
-      // this.updateWord(db, removedHead.id, {memory_value: removedHead.memory_value, incorrect_count: removedHead.incorrect_count, next: currNode.next});
+      this.updateWord(db, removedHead.id, {memory_value: removedHead.memory_value, incorrect_count: removedHead.incorrect_count, next: currNode.next});
 
       // Now that we have pointed the removed HEAD's next to the current HEAD's next, we can now update the current HEAD's next to point to the removed HEAD's next
-      // this.updateWord(db, currNode.id, {next: removedHead.id});
+      this.updateWord(db, currNode.id, {next: removedHead.id});
 
-      // return res.status(200).json({
-      //   nextWord: list.head.value.original,
-      //   totalScore: language.total_score,
-      //   wordCorrectCount: list.head.value.correct_count,
-      //   wordIncorrectCount: list.head.value.incorrect_count,
-      //   // answer: list.head.value.translation,
-      //   answer: removedHead.translation,
-      //   isCorrect: false
-      // });
+      return res.status(200).json({
+        nextWord: list.head.value.original,
+        totalScore: language.total_score,
+        wordCorrectCount: list.head.value.correct_count,
+        wordIncorrectCount: list.head.value.incorrect_count,
+        // answer: list.head.value.translation,
+        answer: removedHead.translation,
+        isCorrect: false
+      });
     }
   },
 
