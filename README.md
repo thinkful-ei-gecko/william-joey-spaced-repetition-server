@@ -1,4 +1,4 @@
-# Wortjäger (Spaced repetition) API!
+# Wortjäger (Spaced repetition) API
 
 ## Authors
 * William Bae | Github: wbae912
