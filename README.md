@@ -1,4 +1,4 @@
-# Wortjäger (Spaced repetition) API!
+# Wortjäger (Spaced repetition) API
 
 ## Authors
 * William Bae | Github: wbae912
@@ -9,7 +9,7 @@ Wortjäger API is the server responsible for handling API requests for the Wortj
 learn German through spaced repetition.
 
 Client:
-* Live Link to application: 
+* Live Link to application: https://william-joey-wortjager-app.now.sh
 * Link to application repository: https://github.com/thinkful-ei-gecko/william-joey-spaced-repetition-client
 
 Server:
