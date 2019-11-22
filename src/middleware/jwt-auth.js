@@ -1,3 +1,4 @@
+/* eslint-disable require-atomic-updates */
 const { JsonWebTokenError } = require('jsonwebtoken');
 const AuthService = require('../auth/auth-service');
 

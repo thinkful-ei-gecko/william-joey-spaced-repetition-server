@@ -10,7 +10,7 @@ VALUES
   (
     1,
     'admin',
-    'joeyromo Admin',
+    'Admin',
     -- password = "pass"
     '$2a$10$fCWkaGbt7ZErxaxclioLteLUgg4Q3Rp09WW0s/wSLxDKYsaGYUpjG'
   );
@@ -30,7 +30,9 @@ VALUES
   (7, 1, 'hund', 'dog', 8),
   (8, 1, 'katze', 'cat', 9),
   (9, 1, 'fett', 'fat', 10),
-  (10, 1, 'klein', 'small', null);
+  (10, 1, 'klein', 'small', 11),
+  (11, 1, 'liebe', 'love', 12),
+  (12, 1, 'bitte', 'please', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
 

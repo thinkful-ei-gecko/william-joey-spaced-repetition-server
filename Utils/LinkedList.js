@@ -1,5 +1,5 @@
 class _Node {
-  constructor(value, next, prev) {
+  constructor(value, next) {
     this.value = value;
     this.next = next;
   }
@@ -36,7 +36,6 @@ class LinkedList {
       currNode = currNode.next;
     }
     if (currNode === null) {
-      console.log('Item not found');
       return;
     }
     previousNode.next = currNode.next;
@@ -59,7 +58,6 @@ class LinkedList {
 
   insertBefore(item, key) {
     if (this.head === null) {
-      console.log('Key does not exist');
       return null;
     }
     let currNode = this.head;
@@ -69,7 +67,6 @@ class LinkedList {
       currNode = currNode.next;
     }
     if (currNode === null) {
-      console.log('key not found');
       return;
     }
     prevNode.next = new _Node(item, currNode);
@@ -77,7 +74,6 @@ class LinkedList {
 
   insertAfter(item, key) {
     if (this.head === null) {
-      console.log('Key does not exist');
       return null;
     }
     let currNode = this.head;
@@ -85,7 +81,6 @@ class LinkedList {
       currNode = currNode.next;
     }
     if (currNode === null) {
-      console.log('key not found');
       return;
     }
     let tempNode = currNode.next;
@@ -139,6 +134,7 @@ function size(list){
   }
   else
     counter++;
+  // eslint-disable-next-line eqeqeq
   while (!(currNode.next == null)) {
     counter++;
     currNode = currNode.next;
