@@ -1,4 +1,45 @@
-# Spaced repetition API!
+# Wortjäger (Spaced repetition) API!
+
+## Authors
+* William Bae | Github: wbae912
+* Joey Romo | Github: joeyjr95
+
+## Description
+Wortjäger API is the server responsible for handling API requests for the Wortjäger (spaced repetition) application. The application is a learning app that helps users
+learn German through spaced repetition.
+
+Client:
+* Live Link to application: 
+* Link to application repository: https://github.com/thinkful-ei-gecko/william-joey-spaced-repetition-client
+
+Server:
+* Live Link to server: https://glacial-sands-91061.herokuapp.com
+* Linke to server repository: https://github.com/thinkful-ei-gecko/william-joey-spaced-repetition-server
+
+## Endpoints
+#### Public Routes
+* ```POST /api/user``` : Endpoint for user to register and create their own account for the application. Credentials are stored in the user table in the database. Field options include:
+  * name (required): User's name
+  * username (required): User's desired username
+  * password (required): User's desired password
+* ```POST /api/auth/token``` : Endpoint used to validate a user's username and password. Returns a JWT token to authorize additional requests to the API upon successful login. Field options include:
+  * username (required): User's username
+  * password (required): User's password
+
+
+#### Private Routes
+* ```GET /api/language``` : Returns the words associated with a user from the database
+* ```GET /api/language/head``` : Returns the current head word/data from the database corresponding to the language.head
+* ```POST /api/language/guess``` : Endpoint for user to submit their English answer/translation for the German word shown on the client. Field option includes:
+  * guess (required): English translation (string) of the German word
+* ```PUT /api/auth``` : Endpoint that replaces existing JWT tokens with a new token 
+
+
+#### Technologies
+* NodeJS
+* Express
+* PostgreSQL
+
 
 ## Local dev setup
 
